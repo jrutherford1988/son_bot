@@ -1,8 +1,8 @@
 # created by Short-round
 # Work with Python 3.6
 import discord
+import config as cfg
 
-TOKEN = 'redacted'
 
 client = discord.Client()
 
@@ -23,6 +23,6 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(TOKEN)
+client.run(cfg.token)
 
 
