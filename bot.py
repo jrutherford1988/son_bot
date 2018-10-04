@@ -4,6 +4,7 @@ import discord
 from boto.s3.connection import S3Connection
 import os
 
+s3 = S3Connection(os.environ['TOKEN'])
 
 client = discord.Client()
 
@@ -24,4 +25,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(os.getenv('TOKEN'))
+client.run(s3)
