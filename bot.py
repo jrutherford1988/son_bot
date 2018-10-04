@@ -1,8 +1,9 @@
 # created by Short-round
 # Work with Python 3.6
 import discord
-import config as cfg
+from boto.s3.connection import S3Connection
 
+s3 = S3Connection(os.environ['TOKEN'])
 
 client = discord.Client()
 
@@ -23,6 +24,6 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(cfg.token)
+client.run(s3)
 
 
