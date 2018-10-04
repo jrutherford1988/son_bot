@@ -1,0 +1,6 @@
+python - 3.6.3
+discord.py==0.16.2
+aiohttp
+websockets
+chardet
+asyncio
