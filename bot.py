@@ -3,7 +3,7 @@
 import discord
 import config as cfg
 
-
+TOKEN = cfg.token
 client = discord.Client()
 
 @client.event
@@ -23,6 +23,6 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(cfg.token)
+client.run(TOKEN)
 
 
