@@ -12,7 +12,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('Hi,'):
+    if message.content.startswith('Hi'):
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
 
