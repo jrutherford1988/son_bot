@@ -1,10 +1,8 @@
 # created by Short-round
 # Work with Python 3.6
-import discord
-from boto.s3.connection import S3Connection
-import os
+import discord, os
 
-s3 = S3Connection(os.getenv('TOKEN'))
+s3 = os.environ['TOKEN']
 
 client = discord.Client()
 
