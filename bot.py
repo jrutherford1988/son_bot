@@ -3,7 +3,7 @@
 import discord, os
 from PIL import Image
 
-# s3 = os.environ['TOKEN']
+s3 = os.environ['TOKEN']
 
 
 client = discord.Client()
@@ -31,4 +31,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run('NDk2MzgyMjU4NTM4NzQxNzYw.Dp_LYw.R-IBP4pc9bte1X4JqccrAAGqIxM')
+client.run(TOKEN)
