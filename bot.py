@@ -1,14 +1,9 @@
 # created by Short-round
 # Work with Python 3.6
-import discord
-from boto.s3.connection import S3Connection
+import discord, os
 
-<<<<<<< HEAD
-s3 = S3Connection(os.environ['TOKEN'])
+s3 = os.environ['TOKEN']
 
-=======
-TOKEN = cfg.token
->>>>>>> fc5c8721b6bfab00d6b9ed66453acb5426aca9e4
 client = discord.Client()
 
 @client.event
@@ -17,7 +12,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if message.content.startswith('Hi,'):
+    if message.content.startswith('Hi'):
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
 
@@ -28,10 +23,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-<<<<<<< HEAD
 client.run(s3)
-=======
-client.run(TOKEN)
->>>>>>> fc5c8721b6bfab00d6b9ed66453acb5426aca9e4
-
-
