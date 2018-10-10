@@ -1,10 +1,13 @@
 # created by Short-round
 # Work with Python 3.6
 import discord, os
+from PIL import Image
 
-s3 = os.environ['TOKEN']
+# s3 = os.environ['TOKEN']
+
 
 client = discord.Client()
+
 
 @client.event
 async def on_message(message):
@@ -15,6 +18,11 @@ async def on_message(message):
     if message.content.startswith('Hi'):
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
+    if message.content.startswith('!ice') or message.content.startswith('!Ice'):
+        path = os.path.dirname(os.path.abspath(__file__))
+        await client.send_file(message.channel, path , filename="fuckYouIce.jpg")
+       
+        
 
 @client.event
 async def on_ready():
@@ -23,4 +31,4 @@ async def on_ready():
     print(client.user.id)
     print('------')
 
-client.run(s3)
+client.run('NDk2MzgyMjU4NTM4NzQxNzYw.Dp_LYw.R-IBP4pc9bte1X4JqccrAAGqIxM')
