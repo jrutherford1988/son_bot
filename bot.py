@@ -1,7 +1,6 @@
 # created by Short-round
 # Work with Python 3.6
 import discord, os
-from PIL import Image
 
 s3 = os.environ['TOKEN']
 
