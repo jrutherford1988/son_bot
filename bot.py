@@ -18,7 +18,7 @@ async def on_message(message):
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
     if message.content.startswith('!ice') or message.content.startswith('!Ice'):
-        img = "https://imgur.com/OrJuwTH"
+        img = "https://i.imgur.com/2URY60H.jpg"
         await client.send_message(message.channel, img)       
 
 @client.event
