@@ -19,10 +19,8 @@ async def on_message(message):
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
     if message.content.startswith('!ice') or message.content.startswith('!Ice'):
-        path = os.path.dirname(os.path.abspath(__file__))
-        await client.send_file(message.channel, path , filename="fuckYouIce.jpg")
-       
-        
+        img = "https://imgur.com/OrJuwTH"
+        await client.send_message(message.channel, img)       
 
 @client.event
 async def on_ready():
