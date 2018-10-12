@@ -9,9 +9,6 @@ s3 = os.environ['TOKEN']
 
 client = discord.Client()
 
-firedCounter = 0
-firedDate = datetime.datetime.strptime(DATE_START,'%B %d, %Y')
-
 @client.event
 async def on_message(message):
     # we do not want the bot to reply to itself
@@ -27,6 +24,10 @@ async def on_message(message):
     
     if message.content.startswith('!fired'):
         msg = incrementFiringCounter()
+        await client.send_message(message.channel, msg)
+    
+    if message.content.startswith('!unfired'):
+        msg = decrementFiringCounter()
         await client.send_message(message.channel, msg)
 
 def incrementFiringCounter():
@@ -56,6 +57,28 @@ def incrementFiringCounter():
     msg = msg + 'It had been {d} days, {h} hours, {m} minutes, and {s} seconds since the last firing. Oh well.'.format(
         d=math.floor(days[0]),h=math.floor(hours[0]),m=math.floor(minutes[0]),s=math.floor(seconds))
     return msg
+
+def decrementFiringCounter():
+    DATE_FORMAT = '%B %d, %Y at %I:%M%p'
+    DATE_START = 'October 12, 2018'
+
+    f = open('cypressCounter','r')
+    firedCounter = int(f.readline())
+    firedDate = datetime.datetime.strptime(f.readline(),DATE_FORMAT)
+    f.close()
+    
+    newCounter = firedCounter - 1
+    newDate = datetime.datetime.now()
+
+    f = open('cypressCounter','w')
+    f.write(str(newCounter) + '\n')
+    f.write(newDate.strftime(DATE_FORMAT))
+    f.close()
+
+    msg = 'Wait, what? You rehired someone you fired before? What could possibly go wrong...\n'
+    msg = msg + 'I guess there have only been {count} firings since {date} now. Technically.'.format(count=newCounter,date=DATE_START)
+    return msg
+
 
 @client.event
 async def on_ready():
