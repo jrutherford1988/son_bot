@@ -21,9 +21,6 @@ async def on_message(message):
     if message.content.startswith('!ice') or message.content.startswith('!Ice'):
         img = "https://i.imgur.com/2URY60H.jpg"
         await client.send_message(message.channel, img) 
-    if message.content.starswith('!test'):
-        msg = 'It worked'
-        await client.send_message(message.channel, msg)
     
     if message.content.startswith('!fired'):
         msg = incrementFiringCounter()
