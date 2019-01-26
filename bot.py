@@ -43,7 +43,7 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-    user = message.member.user.username
+    user = message.author.id
     if message.content.startswith('Hi') and user == "Shortround":
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
