@@ -44,7 +44,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     user = message.author.id
-    if message.content.startswith('Hi') and user == "Shortround":
+    if message.content.startswith('Hi') and user == "":
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
     if message.content.startswith('!ice') or message.content.startswith('!Ice'):
