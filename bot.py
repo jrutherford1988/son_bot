@@ -1,3 +1,32 @@
+
+Skip to content
+
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+
+    @jrutherford1988
+
+0
+0
+
+    1
+
+jrutherford1988/son_bot
+Code
+Issues 1
+Pull requests 0
+Projects 0
+Wiki
+Insights
+Settings
+son_bot/bot.py
+c514b66 on Oct 17, 2018
+@jrutherford1988 jrutherford1988 Update bot.py
+@jrutherford1988
+@jvicory
+91 lines (69 sloc) 2.84 KB
 # created by Short-round
 # Work with Python 3.6
 import discord, os
@@ -14,8 +43,8 @@ async def on_message(message):
     # we do not want the bot to reply to itself
     if message.author == client.user:
         return
-
-    if message.content.startswith('Hi'):
+    user = message.member.user.username
+    if message.content.startswith('Hi') and user == "Shortround":
         msg = 'Fuck you, Dad! I do what I want!'
         await client.send_message(message.channel, msg)
     if message.content.startswith('!ice') or message.content.startswith('!Ice'):
@@ -88,3 +117,19 @@ async def on_ready():
     print('------')
 
 client.run(s3)
+
+    © 2019 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
+
+Press h to open a hovercard with more details.
